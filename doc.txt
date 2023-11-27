@@ -1,4 +1,0 @@
-執行步驟
-1.在專案目錄的終端機執行./setup-git-commit-rule.bat
-測試步驟
- 1.輸入 git commit 即可看到模板訊息，輸入格式以外的commit就會報錯
