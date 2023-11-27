@@ -19,5 +19,5 @@
 ##上述 commit-msg、.git-commit-template.txt 兩個檔案如果有調整過，請重新執行./setup-git-commit-rule.bat
 
 ```
-
+./setup-git-commit-rule.bat
 ```
