@@ -1,5 +1,4 @@
-步驟
- 1:在 VSCODE 終端機執行 git config --global commit.template ./.git-commit-template.txt
- 2.輸入 git commit 即可看到模板訊息 
- 3.輸入 cp ./commit-msg ./.git/hooks/ 
- 4.接著在輸入 git commit 即可測試 commit 檢查
+執行步驟
+1.在專案目錄的終端機執行./setup-git-commit-rule.bat
+測試步驟
+ 1.輸入 git commit 即可看到模板訊息，輸入格式以外的commit就會報錯
