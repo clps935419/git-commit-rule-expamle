@@ -1,0 +1,2 @@
+1.步驟1:在VSCODE終端機執行git config --global commit.template .gitmessage.txt
+
