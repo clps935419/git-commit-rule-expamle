@@ -7,9 +7,15 @@
 # 例如: Github issue #23
 
 # --- 範例 ---
-# feat: 允許在配置文件中使用數組
-# 開發新功能
+# feat: 開發新功能
+# 允許在配置文件中使用數組
 # issue #1
+# ------------
+# --- 公司SVN格式參考 ---
+# [rootCause]: feat 開發新功能
+# [solution]: 允許在配置文件中使用數組
+# [issueNumber]: issue #1
+# [release]: x.x.x.xxxx
 # ------------
 # --- 提交 結束 ---
 # 類型值包含
