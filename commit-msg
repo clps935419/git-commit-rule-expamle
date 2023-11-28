@@ -8,7 +8,7 @@ solution=$(grep -E "^\\[solution\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[sol
 issueNumber=$(grep -E "^\\[issueNumber\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[issueNumber\]: (.+)/\1/')
 release=$(grep -E "^\\[release\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[release\]: (.+)/\1/')
 
-echo "issueNumber:$issueNumber"
+echo "issueNumber:$issueNumber:"
 echo "test:$commit_msg_file"
 
 
@@ -17,7 +17,7 @@ if ! grep -Eq "^\[rootCause\]: .+" "$commit_msg_file" ||
    ! grep -Eq "^\[solution\]: .+" "$commit_msg_file" ||
    ! grep -Eq "^\[issueNumber\]: .+" "$commit_msg_file" ||
    ! grep -Eq "^\[release\]: .+" "$commit_msg_file"; then
-  echo "提交commit不符合模板規範，請檢查[rootCause]:、[solution]:、[issueNumber]:、[release]:是否存在，且每一個[key]: 後面需空格。"
+  echo "提交commit不符合模板規範，請檢查[rootCause]:、[solution]:、[issueNumber]:、[release]:是否存在，且每一個[key]:冒號後面需空格接字串，字串不能為空EX: [key]: N/A"
   exit 1
 fi
 
