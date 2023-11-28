@@ -8,6 +8,10 @@ solution=$(grep -E "^\\[solution\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[sol
 issueNumber=$(grep -E "^\\[issueNumber\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[issueNumber\]: (.+)/\1/')
 release=$(grep -E "^\\[release\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[release\]: (.+)/\1/')
 
+echo "issueNumber:$issueNumber"
+echo "test:$commit_msg_file"
+
+
 # 检查提交消息是否符合模板
 if ! grep -Eq "^\[rootCause\]: .+" "$commit_msg_file" ||
    ! grep -Eq "^\[solution\]: .+" "$commit_msg_file" ||
