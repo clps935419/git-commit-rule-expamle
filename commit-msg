@@ -2,7 +2,6 @@
 
 commit_msg_file="$1"
 
-# 从提交消息文件中提取关键信息
 rootCause=$(grep -E "^\\[rootCause\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[rootCause\]: (.+)/\1/')
 solution=$(grep -E "^\\[solution\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[solution\]: (.+)/\1/')
 issueNumber=$(grep -E "^\\[issueNumber\\]: (.+)$" "$commit_msg_file" | sed -E 's/\[issueNumber\]: (.+)/\1/')
@@ -12,7 +11,7 @@ echo "issueNumber:$issueNumber:"
 echo "test:$commit_msg_file"
 
 
-# 检查提交消息是否符合模板
+# 檢查提交commit是否符合模板
 if ! grep -Eq "^\[rootCause\]: .+" "$commit_msg_file" ||
    ! grep -Eq "^\[solution\]: .+" "$commit_msg_file" ||
    ! grep -Eq "^\[issueNumber\]: .+" "$commit_msg_file" ||
@@ -26,11 +25,9 @@ if [[ "$rootCause" == *"feat"* && ("$issueNumber" == "N/A" || -z "$issueNumber")
   exit 1
 fi
 
-
-# 从提交消息中提取提交类型
 commit_type=$(echo "$rootCause" | cut -d' ' -f1)
 
-# 检查提交类型是否合法
+# 檢查提交類型是否合法
 if ! [[ "$commit_type" =~ ^(feat|fix|docs|style|refactor|perf|test|chore|revert)$ ]]; then
   echo "提交commit不符合模板規範，請檢查提交的類型是否包含feat|fix|docs|style|refactor|perf|test|chore|revert。"
   exit 1
