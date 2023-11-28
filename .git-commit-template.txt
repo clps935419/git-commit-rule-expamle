@@ -4,7 +4,7 @@
 [release]: N/A
 
 # --- 規則解釋 ---
-# 4個欄位key值必填
+# 4個欄位key值必填[rootCause]: 、[solution]: 、[issueNumber]: 、[release]: ，且每一個[key]:冒號後面需空格接字串，字串不能為空EX: [key]: N/A
 # 如果是feat類型，則必須填寫issueNumber，不能為N/A或空值
 # ------------
 # --- 撰寫範例 ---
@@ -13,8 +13,7 @@
 # [issueNumber]: issue #1
 # [release]: x.x.x.xxxx
 # ------------
-# --- 提交 結束 ---
-# 類型值包含
+# --- 類型值列表 ---
 #    feat (新功能)
 #    fix (錯誤修復)
 #    docs (文檔改動)
